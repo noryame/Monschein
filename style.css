@@ -1,0 +1,245 @@
+ 
+
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  background: #0b0c10;
+  color: #eaeaea;
+}
+
+ 
+.hero {
+  height: 100vh;                  /* Plein écran */
+  background: url("images/moon-bg.jpg") center / cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Assombrit légèrement l’image pour lisibilité */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+/* Contenu texte */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Titre principal */
+.hero-content h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+/* Sous-titre */
+.hero-content p {
+  font-size: 1.3rem;
+  opacity: 0.85;
+}
+
+ 
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #111;
+  padding: 10px;
+  text-align: center;
+}
+section {
+  scroll-margin-top: 80px;
+}
+.nav-link {
+  position: relative;
+  padding: 8px 4px;
+  text-decoration: none;
+  color: #c5c6c7;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #66fcf1;
+  transition: width 0.3s ease;
+}
+
+/* lien actif */
+.nav-link.active::after {
+  width: 100%;
+}
+
+
+.navbar a {
+  color: #c5c6c7;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+h3::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #66fcf1 60%);
+  box-shadow: 0 0 10px rgba(102, 252, 241, 0.8);
+}
+h3 {
+  margin-top: 35px;
+  margin-bottom: 8px;
+}
+
+h5 {
+  margin-left: 42px;  
+  font-weight: normal;
+  opacity: 0.85;
+}
+h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: normal;
+}
+
+ 
+.section {
+  padding: 60px 15%;
+}
+
+.section.dark {
+  background: #202730;
+}
+
+.images {
+  display: flex;
+  gap: 20px;
+}
+
+.images img {
+  width: 50%;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+  background: #30323a;
+}
+
+.timeline {
+  border-left: 3px solid #66fcf1;
+  padding-left: 30px;
+}
+
+.event {
+  margin-bottom: 30px;
+}
+
+.date {
+  color: #66fcf1;
+  font-weight: bold;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 4px solid #c5c6c7;
+  padding-left: 15px;
+  margin: 20px 0;
+}
+/* =========================================
+   RESPONSIVE UNIVERSAL MEDIA QUERIES
+   (sans modifier le CSS existant)
+========================================= */
+
+/* 📱 Très petits écrans (≤ 480px) */
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .navbar a,
+  .navbar button {
+    margin: 4px;
+  }
+
+  .hero h1 {
+    letter-spacing: 2px;
+  }
+
+  h5 {
+    margin-left: 20px;
+  }
+
+  .images {
+    flex-direction: column;
+  }
+}
+
+/* 📱 Mobiles standards (≤ 768px) */
+@media (max-width: 768px) {
+
+  .section {
+    padding: 50px 6%;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .images {
+    gap: 15px;
+  }
+}
+
+/* 📱 Tablettes paysage / petits laptops */
+@media (max-width: 1024px) {
+
+  .section {
+    padding: 60px 8%;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+}
+
+/* 🖥️ Très grands écrans (≥ 1600px) */
+@media (min-width: 1600px) {
+
+  body {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 100px 18%;
+  }
+
+  .hero h1 {
+    font-size: 5rem;
+  }
+}
